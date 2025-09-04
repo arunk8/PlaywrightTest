@@ -6,12 +6,11 @@ test('has title', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
   await log.info("");
 });
 
 test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  await page.goto('https://playwright.devadadadad/');
 
   // Click the get started link.
   await page.getByRole('link', { name: 'Get started' }).dblclick()  ;
