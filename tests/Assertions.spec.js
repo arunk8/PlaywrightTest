@@ -13,7 +13,6 @@ test('AssertionsTest',async ({page})=>{
     await expect('124').toBeFalsy() //fail
     await expect(123).toBeTruthy() //pass
     await expect('').toBeTruthy() //fail 
-
     //id -123 -> name - arun
     //expected: arun //acutal - get it from app  --two
     //create a process - generates some id - ID

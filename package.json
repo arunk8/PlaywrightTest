@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:qa": "set env=qa&& npx playwright test",
+    "QA": "set env=qa && npx playwright test",
     "playwright:report" : "npx playwright show-report",
     "allure:report" : "npx allure generate allure-results --clean -o allure-report && npx allure open allure-report"
   },

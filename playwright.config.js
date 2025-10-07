@@ -1,7 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 const environments = require('./environments');
-// const envManager = require('./utils/EnvironmentManager');
 
 // Environment setup
 const env = process.env.ENV || 'qa';   // default is QA
@@ -10,12 +9,10 @@ console.log('🌍 Running tests on environment:', env);
 const configEnv = environments[env];
 console.log('🔑 Loaded config:', configEnv);
 
-// const config = envManager.getConfig();
-// console.log('🔑 Loaded config:', config);
 
-// if (!configEnv) {
-//   throw new Error(`❌ No configuration found for environment: ${env}`);
-// }
+if (!configEnv) {
+  throw new Error(`❌ No configuration found for environment: ${env}`);
+}
 
 module.exports = defineConfig({
   testDir: './tests',
@@ -33,11 +30,12 @@ module.exports = defineConfig({
   ],
 
   use: {
-    baseURL: configEnv.baseURL,   // ✅ now works
+    baseURL: configEnv.baseUrl,   // ✅ now works
     actionTimeout: 5000,
     trace: 'on-first-retry',
     headless: false,
-    screenshot: 'only-on-failure'
+    screenshot: 'only-on-failure',
+    video:
   },
 
   projects: [
