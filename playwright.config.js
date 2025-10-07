@@ -35,7 +35,6 @@ module.exports = defineConfig({
     trace: 'on-first-retry',
     headless: false,
     screenshot: 'only-on-failure',
-    video:
   },
 
   projects: [
